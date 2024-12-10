@@ -5,6 +5,8 @@
 
 ## 🎯 About These Series
 
+TBD
+
 
 ## 🎓 Prerequisites
 
@@ -18,15 +20,19 @@
 
 All tools used throughout the course will stick to their free tier, except OpenAI's API.
 
+TBD
+
 ## 📚 Articles
 
+TBD
 
 ## 🏗️ Project Structure
 
+TBD
 
 ## 🚀 Getting Started
 
-For detailed installation and usage instructions, see our [INSTALL_AND_USAGE](...) guide.
+For detailed installation and usage instructions, see our [INSTALL_AND_USAGE](https://github.com/decodingml/hands-on-retrieval/blob/main/INSTALL_AND_USAGE.md) guide.
 
 **Recommendation:** While you can follow the installation guide directly, we strongly recommend reading the accompanying articles to gain a complete understanding of the series.
 
@@ -34,7 +40,7 @@ For detailed installation and usage instructions, see our [INSTALL_AND_USAGE](..
 
 Have questions or running into issues? We're here to help!
 
-Open a [GitHub issue]() for:
+Open a [GitHub issue](https://github.com/decodingml/hands-on-retrieval/issues) for:
 - Questions about the course material
 - Technical troubleshooting
 - Clarification on concepts
@@ -69,6 +75,8 @@ Open a [GitHub issue]() for:
   </tr>
 </table>
 
+TBD
+
 ## License
 
-This course is an open-source project released under the Apache-2.0 license. Thus, as long you distribute our LICENSE and acknowledge your project is based on our work, you can safely clone or fork this project and use it as a source of inspiration for your educational projects (e.g., university, college degree, personal projects, etc.).
+This course is an open-source project released under the MIT license. Thus, as long you distribute our LICENSE and acknowledge your project is based on our work, you can safely clone or fork this project and use it as a source of inspiration for your educational projects (e.g., university, college degree, personal projects, etc.).
