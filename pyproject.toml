@@ -9,6 +9,8 @@ dependencies = [
     "ipykernel>=6.29.5",
     "nbformat>=5.10.4",
     "pydantic-settings>=2.6.1",
+    "pymongo>=4.10.1",
+    "superlinked-server>=0.7.0",
     "superlinked==17.1.0",
     "zstandard>=0.23.0",
 ]
