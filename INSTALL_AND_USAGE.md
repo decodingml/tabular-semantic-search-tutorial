@@ -54,7 +54,7 @@ Before running any components:
 > [!IMPORTANT]
 > **Quick Test Mode:** Set `USE_MONGO_VECTOR_DB=False` to use an in-memory database instead of MongoDB.
 
-## 1. Load and Process Your Data
+## 3. Load and Process Your Data
 
 The first step is to download and process the dataset sample:
 ```bash
