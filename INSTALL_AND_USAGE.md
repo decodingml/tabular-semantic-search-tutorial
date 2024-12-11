@@ -104,33 +104,4 @@ data/
    make post-semantic-query   # Natural language search
    ```
 
-> 🔔 Remember to keep the server running while testing queries!
-
-
-## 5. Run the Superlinked Server and MongoDB Vector Database
-
-For production we can quickly ship the Superlinked logic into a FastAPI server hooked to a MongoDB Vector Databse.
-
-1. Start the server:
-   ```bash
-   make start-server
-   ```
-   This will launch the application server using Python.
-
-2. Load sample data:
-   ```bash
-   make load-data
-   ```
-   This sends a POST request to populate the database with initial product schema data. Wait for the data to load. It might take a few minutes.
-
-3. Test the search functionality:
-   ```bash
-   make post-filter-query
-   ```
-   This executes a sample natural language query ("books with a price lower than 100") against the API.
-   ```bash
-   make post-semantic-query
-   ```
-
-> [!TIP]
-> Make sure the server is running (step 1) before executing the data loading or search commands.
+> 🔔 Make sure the server is running (step 1) before executing the data loading or search commands.
