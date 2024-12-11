@@ -166,3 +166,4 @@ cython_debug/
 
 # Data
 data/
+in_memory_vdb/

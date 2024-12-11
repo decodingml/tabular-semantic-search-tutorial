@@ -62,7 +62,7 @@ def parse_price(price: str) -> Optional[float]:
         return None
 
 
-def process_product_data(df: pd.DataFrame, sample: bool = True) -> pd.DataFrame:
+def process_amazon_dataset(df: pd.DataFrame) -> pd.DataFrame:
     """Process raw product data into a standardized format.
 
     This function takes a DataFrame containing raw product data and processes it to ensure
@@ -109,6 +109,9 @@ def process_product_data(df: pd.DataFrame, sample: bool = True) -> pd.DataFrame:
     df_processed["review_count"] = df_processed["ratings"].apply(parse_ratings)
     df_processed["price"] = df_processed["price"].apply(parse_price)
 
+    # Drop original stars and ratings columns since we've extracted the values
+    df_processed = df_processed.drop(columns=["stars", "ratings"])
+
     df_processed = df_processed.dropna(
         subset=["review_rating", "review_count", "price"]
     ).astype(
@@ -122,8 +125,5 @@ def process_product_data(df: pd.DataFrame, sample: bool = True) -> pd.DataFrame:
             "price": float,
         }
     )
-
-    if sample:
-        df_processed = df_processed.head(300)
 
     return df_processed

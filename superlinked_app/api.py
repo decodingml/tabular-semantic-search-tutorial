@@ -1,15 +1,17 @@
 import superlinked.framework as sl
+from loguru import logger
 
-from product_search import index, query
-from product_search.config import settings
+from superlinked_app import index, query
+from superlinked_app.config import settings
 
 product_source: sl.RestSource = sl.RestSource(index.product)
 
+logger.info(f"Data loader will load data from: '{settings.PROCESSED_DATASET_PATH}'")
 product_data_loader_parser = sl.DataFrameParser(
     schema=index.product, mapping={index.product.id: "asin"}
 )
 product_data_loader_config = sl.DataLoaderConfig(
-    "./data/processed_samples.jsonl",
+    str(settings.PROCESSED_DATASET_PATH),
     sl.DataFormat.JSON,
     pandas_read_kwargs={"lines": True, "chunksize": 100},
 )
@@ -19,7 +21,8 @@ product_loader_source: sl.DataLoaderSource = sl.DataLoaderSource(
     parser=product_data_loader_parser,
 )
 
-if settings.USE_MONGODB:
+if settings.USE_MONGO_VECTOR_DB:
+    logger.info("Using MongoDBVectorDatabase as your vector database.")
     vector_database = sl.MongoDBVectorDatabase(
         settings.MONGO_CLUSTER_URL,
         settings.MONGO_DATABASE_NAME,
@@ -29,6 +32,7 @@ if settings.USE_MONGODB:
         settings.MONGO_API_PRIVATE_KEY,
     )
 else:
+    logger.info("Using InMemoryVectorDatabase as your vector database.")
     vector_database = vector_database = sl.InMemoryVectorDatabase()
 
 executor = sl.RestExecutor(

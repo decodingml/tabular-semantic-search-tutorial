@@ -1,14 +1,13 @@
 from superlinked import framework as sl
 
-from product_search import index
-from product_search.config import settings
+from superlinked_app import index
+from superlinked_app.config import settings
 
 assert (
     settings.OPENAI_API_KEY
 ), "OPENAI_API_KEY must be set in environment variables to use natural language queries"
 
 
-# fill this with your API key - this will drive param extraction
 openai_config = sl.OpenAIClientConfig(
     api_key=settings.OPENAI_API_KEY.get_secret_value(), model=settings.OPENAI_MODEL_ID
 )
@@ -35,8 +34,6 @@ review_rating_param = sl.Param(
     ),
 )
 
-# Define your query using dynamic parameters for query text and weights.
-# let's create a base query that we will modify to 2 alternative versions
 base_query = (
     sl.Query(
         index.product_index,
@@ -48,7 +45,6 @@ base_query = (
     )
     .find(index.product)
     .limit(sl.Param("limit"))
-    # we will have our LLM fill them based on our natural language query
     .with_natural_query(sl.Param("natural_query"), openai_config)
     .filter(
         index.product.type

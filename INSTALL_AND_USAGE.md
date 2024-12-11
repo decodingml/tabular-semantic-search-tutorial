@@ -1,24 +1,28 @@
 # 🚀 Installation and Usage Guide
 
-This guide will help you ...
+Get up and running with our semantic search engine in minutes.
 
 # 📋 Prerequisites
 
-## Local Tools
-You'll need the following tools installed locally:
-- [Python v3.11](https://www.python.org/downloads/)
-- [uv v0.4.30](https://github.com/astral-sh/uv) - Python package installer and virtual environment manager
-- [GNU Make 3.81](https://www.gnu.org/software/make/) - Build automation tool
+## Local Setup
+Install these tools on your machine:
+| Tool | Purpose | Version | Download Link | Notes |
+|------|---------|---------|---------------|--------|
+| Python | Programming language runtime | v3.11 | [Download](https://www.python.org/downloads/) | Core runtime environment |
+| uv | Python package installer and virtual environment manager | v0.4.30 | [Download](https://github.com/astral-sh/uv) | Modern replacement for pip/venv/poetry |
+| GNU Make | Build automation tool | v3.81 | [Download](https://www.gnu.org/software/make/) | Used for running project commands |
 
 ## Cloud Services
-The project requires access to these cloud services:
+You'll need access to:
 
 | Service | Purpose | Cost | Required Credentials | Setup Guide |
 |---------|---------|------|---------------------|-------------|
 | [MongoDB Atlas](https://www.mongodb.com/products/platform/atlas-database) | Vector DB for retrieval | Free tier available | `MONGODB_DATABASE_USER_USERNAME`<br>`MONGODB_DATABASE_USER_PASSWORD` | 1. [Create a Cluster](https://www.mongodb.com/docs/guides/atlas/cluster/) </br> 2. [Add a Database User](https://www.mongodb.com/docs/guides/atlas/db-user/) </br> 3. [Configure a Network Connection](https://www.mongodb.com/docs/guides/atlas/network-connections/) </br> 4. [Creating the API Key](https://docs.superlinked.com/run-in-production/index-1/mongodb#creating-the-api-key) |
 | [OpenAI API](https://openai.com/index/openai-api/) | LLM API | Pay-per-use | `OPENAI_API_KEY`<br>`OPENAI_MODEL_ID` | [Quick Start Guide](https://platform.openai.com/docs/quickstart) |
 
-## 1. Installation
+# 💻 Setup in 3 Steps
+
+## 1. Install Dependencies
 
 Set up the project environment by running the following:
 ```bash
@@ -38,7 +42,7 @@ This command will:
 > [!NOTE]
 > Normally, `uv` will pick the right Python version mentioned in `.python-version` and install it automatically if it is not on your system. If you are having any issues, explicitly install the right Python version by running `make install-python`
 
-## 2. Environment Configuration
+## 2. Configure Environment
 
 Before running any components:
 1. Create your environment file:
@@ -47,7 +51,65 @@ Before running any components:
    ```
 2. Open `.env` and configure the required credentials following the inline comments.
 
-# ⚡️ Running the Code
+> [!IMPORTANT]
+> **Quick Test Mode:** Set `USE_MONGO_VECTOR_DB=False` to use an in-memory database instead of MongoDB.
+
+## 1. Load and Process Your Data
+
+The first step is to download and process the dataset sample:
+```bash
+make download-and-process-sample-dataset
+```
+
+We also support the complete dataset, but you need a powerful computer, good internet and patience to run everything on it:
+```bash
+make download-and-process-full-dataset
+```
+
+You should see this structure in your `data` folder:
+```text
+data/
+├── processed_100_sample.jsonl
+├── processed_300_sample.jsonl
+├── processed_632_sample.jsonl
+├── sample.json
+└── sample.json.gz
+```
+
+# ⚡️ Explore & Run
+
+## 🔍 Interactive Notebooks
+
+| Notebook | Description |
+|----------|-------------|
+| [Dataset Exploration](1_eda.ipynb) | Dive into the Amazon ESCI dataset |
+| [Semantic Search Demo](2_tabular_semantic_search_superlinked.ipynb) | See Superlinked in action |
+| [Text-to-SQL Examples](3_tabular_semantic_search_text_to_sql.ipynb) | Try LlamaIndex queries |
+
+## 🚀 Launch the Superlinked Server and MongoDB Vector Database
+
+1. Start it up:
+   ```bash
+   make start-server
+   ```
+
+2. Load your data:
+   ```bash
+   make load-data   # Give it a few minutes
+   ```
+
+3. Try some queries:
+   ```bash
+   make post-filter-query     # Example: "books under $100"
+   make post-semantic-query   # Natural language search
+   ```
+
+> 🔔 Remember to keep the server running while testing queries!
+
+
+## 5. Run the Superlinked Server and MongoDB Vector Database
+
+For production we can quickly ship the Superlinked logic into a FastAPI server hooked to a MongoDB Vector Databse.
 
 1. Start the server:
    ```bash
@@ -59,13 +121,16 @@ Before running any components:
    ```bash
    make load-data
    ```
-   This sends a POST request to populate the database with initial product schema data.
+   This sends a POST request to populate the database with initial product schema data. Wait for the data to load. It might take a few minutes.
 
 3. Test the search functionality:
    ```bash
    make post-filter-query
    ```
    This executes a sample natural language query ("books with a price lower than 100") against the API.
+   ```bash
+   make post-semantic-query
+   ```
 
 > [!TIP]
 > Make sure the server is running (step 1) before executing the data loading or search commands.

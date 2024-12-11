@@ -7,12 +7,17 @@ requires-python = "~=3.11"
 dependencies = [
     "altair>=5.5.0",
     "ipykernel>=6.29.5",
+    "llama-index>=0.12.5",
+    "llama-index-llms-openai>=0.3.8",
+    "loguru>=0.7.3",
     "nbformat>=5.10.4",
     "pydantic-settings>=2.6.1",
     "pymongo>=4.10.1",
     "superlinked-server>=0.7.0",
     "superlinked==17.1.0",
     "zstandard>=0.23.0",
+    "sqlalchemy>=2.0.36",
+    "matplotlib>=3.9.3",
 ]
 
 [dependency-groups]

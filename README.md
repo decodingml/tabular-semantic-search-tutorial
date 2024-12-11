@@ -1,6 +1,6 @@
 <div align="center">
-  <h1>Tabular Semantic Search</h1>
-  <p class="tagline">Open-source series by <a href="https://decodingml.substack.com">Decoding ML</a>.</p>
+  <h1>Hands-on Amazon Tabular Semantic Search</h1>
+  <p class="tagline">Open-source series by <a href="https://decodingml.substack.com">Decoding ML</a> in collaboration with Superlinked and MongoDB.</p>
 </div>
 
 ## 🎯 About These Series
@@ -18,9 +18,7 @@ TBD
 
 ## 💰 Cost Structure
 
-All tools used throughout the course will stick to their free tier, except OpenAI's API.
-
-TBD
+All tools used throughout the course will stick to their free tier, except OpenAI's API, which will cost you <1$ to run all our examples.
 
 ## 📚 Articles
 
@@ -28,7 +26,33 @@ TBD
 
 ## 🏗️ Project Structure
 
-TBD
+```text
+.
+├── data/                                          # Directory where dataset files and processed data will be downloaded.
+├── superlinked_app/                               # Main application source code
+├── tools/                                         # Utility scripts and helper tools
+├── .env                                           # Environment variables for local development
+├── .env.example                                   # Template for environment variables
+├── 1_eda.ipynb                                    # Notebook for Exploratory Data Analysis for the Amazon dataset
+├── 2_tabular_semantic_search_superlinked.ipynb    # Demo notebook for Superlinked tabular semantic search
+├── 3_tabular_semantic_search_text_to_sql.ipynb    # Examples of text-to-SQL queries
+├── Makefile                                       # Running commands shortcuts
+├── pyproject.toml                                 # Python project dependencies and metadata
+└── uv.lock                                        # Lock file for uv package manager
+```
+
+## 💾 Dataset
+
+We will use the [ESCI-S: extended metadata for Amazon ESCI dataset](https://github.com/shuttie/esci-s?tab=readme-ov-file) dataset released under the Apache-2.0 license.
+
+It is an e-commerce dataset on Amazon products. 
+
+The full dataset references ~1.8M unique products. We will work with a sample of 4400 products to make everything lighter, but the code is compatible with the whole dataset.
+
+📚 Read more on the [ESCI-S dataset](https://github.com/shuttie/esci-s?tab=readme-ov-file)
+
+💻 Explore it in our [Dataset Exploration](1_eda.ipynb) Notebook.
+
 
 ## 🚀 Getting Started
 
