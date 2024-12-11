@@ -56,7 +56,7 @@ The full dataset references ~1.8M unique products. We will work with a sample of
 
 ## 🚀 Getting Started
 
-For detailed installation and usage instructions, see our [INSTALL_AND_USAGE](https://github.com/decodingml/hands-on-retrieval/blob/main/INSTALL_AND_USAGE.md) guide.
+For detailed installation and usage instructions, see our [INSTALL_AND_USAGE](INSTALL_AND_USAGE.md) guide.
 
 **Recommendation:** While you can follow the installation guide directly, we strongly recommend reading the accompanying articles to gain a complete understanding of the series.
 
