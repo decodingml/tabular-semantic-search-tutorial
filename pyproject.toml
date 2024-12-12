@@ -18,6 +18,7 @@ dependencies = [
     "zstandard>=0.23.0",
     "sqlalchemy>=2.0.36",
     "matplotlib>=3.9.3",
+    "streamlit>=1.41.0",
 ]
 
 [dependency-groups]

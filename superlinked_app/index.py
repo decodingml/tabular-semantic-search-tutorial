@@ -1,9 +1,12 @@
 from superlinked import framework as sl
 
+from superlinked_app import constants
+
 
 class ProductSchema(sl.Schema):
     id: sl.IdField
     type: sl.String
+    category: sl.StringList
     title: sl.String
     description: sl.String
     review_rating: sl.Float
@@ -13,6 +16,12 @@ class ProductSchema(sl.Schema):
 
 product = ProductSchema()
 
+category_space = sl.CategoricalSimilaritySpace(
+    category_input=product.category,
+    categories=constants.CATEGORIES,
+    uncategorized_as_category=True,
+    negative_filter=-1,
+)
 description_space = sl.TextSimilaritySpace(
     text=product.description, model="Alibaba-NLP/gte-large-en-v1.5"
 )
@@ -24,6 +33,11 @@ price_minimizer_space = sl.NumberSpace(
 )
 
 product_index = sl.Index(
-    spaces=[description_space, review_rating_maximizer_space, price_minimizer_space],
-    fields=[product.type, product.review_rating, product.price],
+    spaces=[
+        category_space,
+        description_space,
+        review_rating_maximizer_space,
+        price_minimizer_space,
+    ],
+    fields=[product.type, product.category, product.review_rating, product.price],
 )

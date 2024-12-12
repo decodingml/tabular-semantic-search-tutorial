@@ -1,6 +1,28 @@
+import random
 from typing import Optional
 
 import pandas as pd
+
+
+def parse_category(category: str) -> list[str]:
+    """Parse the category string and return the first category.
+
+    Args:
+        category: String containing the category list (e.g., "['Books', 'Fiction', 'Literature']")
+
+    Returns:
+        String containing the first category, or None if parsing fails
+    """
+    if isinstance(category, list) and pd.isna(category).any():
+        return []
+    elif not isinstance(category, list) and pd.isna(category):
+        return []
+
+    try:
+        keep_num_categories = 1 if random.random() < 0.9 else 2
+        return [c.strip() for c in category][:keep_num_categories]
+    except (ValueError, IndexError):
+        return []
 
 
 def parse_stars(stars: str) -> Optional[float]:
@@ -89,6 +111,8 @@ def process_amazon_dataset(df: pd.DataFrame) -> pd.DataFrame:
             - price (float): Price value
     """
 
+    random.seed(6)
+
     # Create a copy to avoid modifying the original DataFrame
     df_processed = df.copy()
 
@@ -96,6 +120,7 @@ def process_amazon_dataset(df: pd.DataFrame) -> pd.DataFrame:
     columns_to_keep = [
         "asin",
         "type",
+        "category",
         "title",
         "description",
         "stars",
@@ -105,6 +130,7 @@ def process_amazon_dataset(df: pd.DataFrame) -> pd.DataFrame:
     df_processed = df_processed[columns_to_keep]
 
     # Apply transformations
+    df_processed["category"] = df_processed["category"].apply(parse_category)
     df_processed["review_rating"] = df_processed["stars"].apply(parse_stars)
     df_processed["review_count"] = df_processed["ratings"].apply(parse_ratings)
     df_processed["price"] = df_processed["price"].apply(parse_price)

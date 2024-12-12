@@ -1,6 +1,6 @@
 from superlinked import framework as sl
 
-from superlinked_app import index
+from superlinked_app import constants, index
 from superlinked_app.config import settings
 
 assert (
@@ -12,8 +12,16 @@ openai_config = sl.OpenAIClientConfig(
     api_key=settings.OPENAI_API_KEY.get_secret_value(), model=settings.OPENAI_MODEL_ID
 )
 
+category_similar_param = sl.Param(
+    "query_category",
+    description=(
+        "The text in the user's query that is used to search in the products' description."
+        " Extract info that does not apply to other spaces or params."
+    ),
+    options=constants.CATEGORIES,
+)
 text_similar_param = sl.Param(
-    "query_text",
+    "query_description",
     description=(
         "The text in the user's query that is used to search in the products' description."
         " Extract info that does not apply to other spaces or params."
@@ -39,7 +47,9 @@ base_query = (
         index.product_index,
         weights={
             index.description_space: sl.Param("description_weight"),
-            index.review_rating_maximizer_space: sl.Param("stars_maximizer_weight"),
+            index.review_rating_maximizer_space: sl.Param(
+                "review_rating_maximizer_weight"
+            ),
             index.price_minimizer_space: sl.Param("price_minimizer_weights"),
         },
     )
@@ -51,7 +61,7 @@ base_query = (
         == sl.Param(
             "filter_by_type",
             description="Used to only present items that have a specific type",
-            options=["product", "book"],
+            options=constants.TYPES,
         )
     )
 )
@@ -63,10 +73,18 @@ filter_query = (
         sl.Param("description_similar_clause_weight"),
     )
     .filter(
+        index.product.category
+        == sl.Param(
+            "filter_by_cateogry",
+            description="Used to only present items that have a specific cateogry",
+            options=constants.CATEGORIES,
+        )
+    )
+    .filter(
         index.product.review_rating
         >= sl.Param(
-            "rating_bigger_than",
-            description="Used to find items with a rating bigger than the provided number.",
+            "review_rating_bigger_than",
+            description="Used to find items with a review rating bigger than the provided number.",
         )
     )
     .filter(
@@ -96,4 +114,4 @@ semantic_query = (
     )
 )
 
-similar_items_query = filter_query.with_vector(index.product, sl.Param("product_id"))
+similar_items_query = semantic_query.with_vector(index.product, sl.Param("product_id"))

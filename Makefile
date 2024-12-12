@@ -32,3 +32,6 @@ post-semantic-query:
 	-H 'accept: application/json' \
 	-H 'Content-Type: application/json' \
 	-d '{"natural_query": "books with a price lower than 100", "limit": 3}' | jq '.'
+
+start-ui:
+	uv run streamlit run tools/streamlit_app.py

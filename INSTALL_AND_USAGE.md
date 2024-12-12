@@ -90,8 +90,9 @@ data/
 
 1. Start it up:
    ```bash
-   make start-server
+   make start-superlinked-server
    ```
+   FastAPI endpoints docs available at `http://localhost:8080/docs`
 
 2. Load your data:
    ```bash
@@ -103,5 +104,11 @@ data/
    make post-filter-query     # Example: "books under $100"
    make post-semantic-query   # Natural language search
    ```
+
+4. Start the Streamlit UI:
+   ```bash
+   make start-ui
+   ```
+   Accessible at `http://localhost:8501/`
 
 > 🔔 Make sure the server is running (step 1) before executing the data loading or search commands.
