@@ -36,12 +36,12 @@ def parse_stars(stars: str) -> Optional[float]:
     """
 
     if pd.isna(stars):
-        return None
+        return -1.0
     stars_str = str(stars).replace(",", ".")  # Handle European number format
     try:
         return float(stars_str.split()[0])
     except (ValueError, IndexError):
-        return None
+        return -1.0
 
 
 def parse_ratings(ratings: str) -> Optional[int]:
@@ -55,13 +55,13 @@ def parse_ratings(ratings: str) -> Optional[int]:
     """
 
     if pd.isna(ratings):
-        return None
+        return 0
     try:
         # Remove commas and get first number
         ratings_str = str(ratings).split()[0].replace(",.", "")
         return int(ratings_str)
     except (ValueError, IndexError):
-        return None
+        return 0
 
 
 def parse_price(price: str) -> Optional[float]:
@@ -115,6 +115,7 @@ def process_amazon_dataset(df: pd.DataFrame) -> pd.DataFrame:
 
     # Create a copy to avoid modifying the original DataFrame
     df_processed = df.copy()
+    df_processed = df_processed[df_processed["locale"] == "us"]
 
     # Keep only required columns
     columns_to_keep = [
@@ -139,7 +140,7 @@ def process_amazon_dataset(df: pd.DataFrame) -> pd.DataFrame:
     df_processed = df_processed.drop(columns=["stars", "ratings"])
 
     df_processed = df_processed.dropna(
-        subset=["review_rating", "review_count", "price"]
+        subset=["price"]
     ).astype(
         {
             "asin": str,
