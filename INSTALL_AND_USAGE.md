@@ -71,7 +71,7 @@ You should see this structure in your `data` folder:
 data/
 ├── processed_100_sample.jsonl
 ├── processed_300_sample.jsonl
-├── processed_632_sample.jsonl
+├── processed_850_sample.jsonl
 ├── sample.json
 └── sample.json.gz
 ```

@@ -4,9 +4,12 @@ from loguru import logger
 from superlinked_app import index, query
 from superlinked_app.config import settings
 
+# Define the real-time data loader (takes items one by one through HTTP requests).
 product_source: sl.RestSource = sl.RestSource(index.product)
 
+# Define the batch data loader (loads our static dataset).
 logger.info(f"Data loader will load data from: '{settings.PROCESSED_DATASET_PATH}'")
+settings.validate_processed_dataset_exists()
 product_data_loader_parser = sl.DataFrameParser(
     schema=index.product, mapping={index.product.id: "asin"}
 )

@@ -1,28 +1,73 @@
 <div align="center">
   <h1>Hands-on Amazon Tabular Semantic Search</h1>
-  <p class="tagline">Open-source series by <a href="https://decodingml.substack.com">Decoding ML</a> in collaboration with Superlinked and MongoDB.</p>
+  <p class="tagline">Open-source series by <a href="https://decodingml.substack.com">Decoding ML</a> in collaboration with <a href="https://rebrand.ly/superlinked-homepage">Superlinked</a> and <a href="https://rebrand.ly/mongo-atlas-vector-search">MongoDB</a>.</p>
 </div>
 
-## 🎯 About These Series
 
-TBD
+## 🎯 What You'll Build
+
+A production-ready tabular semantic search system for Amazon e-commerce products that enables natural language queries. 
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center"><b>🔍 Core Features</b></td>
+      <td align="center"><b>🛠️ Tech Stack</b></td>
+    </tr>
+    <tr>
+      <td>
+        • Semantic search for tabular data<br/>
+        • Natural language query processing<br/>
+        • Multi-attribute vector indexing<br/>
+        • RESTful API endpoints<br/>
+        • Tabular semantic search vs. text-to-SQL<br/>
+        • Interactive web interface
+      </td>
+      <td>
+        • OpenAI LLMs<br/>
+        • MongoDB Atlas Vector Search<br/>
+        • Superlinked<br/>
+        • FastAPI<br/>
+        • LlamaIndex<br/>
+        • Streamlit
+      </td>
+    </tr>
+  </table>
+</div>
+
+Perfect for developers building search functionality in e-commerce or structured data applications.
+
+<p align="center">
+  <img src="assets/architecture_1.png" alt="architecture_1" width="400" style="display: inline-block; margin-right: 20px;">
+  <img src="assets/architecture_2.png" alt="architecture_2" width="400" style="display: inline-block;">
+</p>
 
 
 ## 🎓 Prerequisites
 
 | Category | Requirements |
 |----------|-------------|
-| **Skills** | Basic knowledge of Python and Machine Learning |
+| **Skills** | Basic knowledge of Python. |
 | **Hardware** | Any modern laptop/workstation will do the job (no GPU or powerful computing power required). |
-| **Level** | Intermediate |
+| **Level** | Beginner |
 
 ## 💰 Cost Structure
 
 All tools used throughout the course will stick to their free tier, except OpenAI's API, which will cost you <1$ to run all our examples.
 
+
 ## 📚 Articles
 
-TBD
+Our recommendation for each article:
+
+- Read the article.
+- Run the Notebook and the code using the [INSTALL_AND_USAGE](INSTALL_AND_USAGE.md) docs.
+- Go deeper into the code
+
+| No. | Article | Description | Notebooks | Python code |
+|--------|---------|-------------|-----------------|-----------------|
+| 1 | [Forget text-to-SQL: Use this natural query instead](https://decodingml.substack.com) | Learn to build a tabular semantic search RESTful API server that enables natural language queries. | • [1_eda.ipynb](1_eda.ipynb)</br>• [2_tabular_semantic_search_superlinked.ipynb](2_tabular_semantic_search_superlinked.ipynb) | `superlinked_app` |
+| 2 | [Tabular semantic search vs. text-to-SQL](https://decodingml.substack.com) | Deep dive into how tabular semantic search works and what it offers in addition to text-to-SQL strategies. | • [3_tabular_semantic_search_text_to_sql.ipynb](3_tabular_semantic_search_text_to_sql.ipynb) | `superlinked_app` |
 
 ## 🏗️ Project Structure
 
@@ -60,46 +105,43 @@ For detailed installation and usage instructions, see our [INSTALL_AND_USAGE](IN
 
 **Recommendation:** While you can follow the installation guide directly, we strongly recommend reading the accompanying articles to gain a complete understanding of the series.
 
+<p align="center">
+  <img src="assets/streamlit_app_example.png" alt="streamlit_app_example" width="600">
+</p>
+
 ## 💡 Questions and Troubleshooting
 
 Have questions or running into issues? We're here to help!
 
 Open a [GitHub issue](https://github.com/decodingml/hands-on-retrieval/issues) for:
-- Questions about the course material
+- Questions about the series material
 - Technical troubleshooting
 - Clarification on concepts
-
 
 ## Sponsors
 
 <table>
   <tr>
     <td align="center">
-      <a href="" target="_blank">Superlinked</a>
+      <a href="https://rebrand.ly/superlinked-homepage" target="_blank">Superlinked</a>
+    </td>
+    <td align="center">
+      <a href="https://rebrand.ly/mongo-atlas-vector-search" target="_blank">MongoDB</a>
     </td>
   </tr>
   <tr>
     <td align="center">
       <a href="" target="_blank">
-        <img src="assets/hopsworks.png" width="200" alt="Hopsworks">
+        <img src="assets/superlinked.png" width="200" alt="Superlinked">
       </a>
     </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <a href="" target="_blank">MongoDB</a>
-    </td>
-  </tr>
-  <tr>
     <td align="center">
       <a href="" target="_blank">
-        <img src="assets/hopsworks.png" width="200" alt="Hopsworks">
+        <img src="assets/mongo.png" width="61" alt="Mongo">
       </a>
     </td>
   </tr>
 </table>
-
-TBD
 
 ## License
 

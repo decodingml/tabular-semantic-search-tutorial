@@ -25,7 +25,7 @@ def parse_category(category: str) -> list[str]:
         return []
 
 
-def parse_stars(stars: str) -> Optional[float]:
+def parse_review_rating(stars: str) -> Optional[float]:
     """Parse the stars rating from a string to a float value between 0 and 5.
 
     Args:
@@ -44,7 +44,7 @@ def parse_stars(stars: str) -> Optional[float]:
         return -1.0
 
 
-def parse_ratings(ratings: str) -> Optional[int]:
+def parse_review_count(ratings: str) -> Optional[int]:
     """Parse the number of ratings from a string to a float value.
 
     Args:
@@ -132,8 +132,8 @@ def process_amazon_dataset(df: pd.DataFrame) -> pd.DataFrame:
 
     # Apply transformations
     df_processed["category"] = df_processed["category"].apply(parse_category)
-    df_processed["review_rating"] = df_processed["stars"].apply(parse_stars)
-    df_processed["review_count"] = df_processed["ratings"].apply(parse_ratings)
+    df_processed["review_rating"] = df_processed["stars"].apply(parse_review_rating)
+    df_processed["review_count"] = df_processed["ratings"].apply(parse_review_count)
     df_processed["price"] = df_processed["price"].apply(parse_price)
 
     # Drop original stars and ratings columns since we've extracted the values

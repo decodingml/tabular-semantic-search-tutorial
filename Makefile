@@ -33,5 +33,12 @@ post-semantic-query:
 	-H 'Content-Type: application/json' \
 	-d '{"natural_query": "books with a price lower than 100", "limit": 3}' | jq '.'
 
+similar-item-query:
+	curl -X 'POST' \
+	'http://localhost:8080/api/v1/search/semantic_query' \
+	-H 'accept: application/json' \
+	-H 'Content-Type: application/json' \
+	-d '{"natural_query": "similar books to B07WP4RXHY with a rating bigger than 4.5 and a price lower than 100", "limit": 3}' | jq '.'
+
 start-ui:
 	uv run streamlit run tools/streamlit_app.py
