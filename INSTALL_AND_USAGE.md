@@ -1,11 +1,13 @@
 # 🚀 Installation and Usage Guide
 
-Get up and running with our semantic search engine in minutes.
+Get up and running with our Amazon tabular semantic search engine in minutes.
 
 # 📋 Prerequisites
 
 ## Local Setup
+
 Install these tools on your machine:
+
 | Tool | Purpose | Version | Download Link | Notes |
 |------|---------|---------|---------------|--------|
 | Python | Programming language runtime | v3.11 | [Download](https://www.python.org/downloads/) | Core runtime environment |
@@ -13,6 +15,7 @@ Install these tools on your machine:
 | GNU Make | Build automation tool | v3.81 | [Download](https://www.gnu.org/software/make/) | Used for running project commands |
 
 ## Cloud Services
+
 You'll need access to:
 
 | Service | Purpose | Cost | Required Credentials | Setup Guide |
@@ -49,7 +52,7 @@ Before running any components:
    ```bash
    cp .env.example .env
    ```
-2. Open `.env` and configure the required credentials following the inline comments.
+2. Open `.env` and configure the required credentials following the inline comments. You can find all the settings options in the Pyndatic settings class available at [superlinked_app/config.py](superlinked_app/config.py).
 
 > [!IMPORTANT]
 > **Quick Test Mode:** Set `USE_MONGO_VECTOR_DB=False` to use an in-memory database instead of MongoDB.
