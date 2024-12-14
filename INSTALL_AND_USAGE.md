@@ -52,10 +52,10 @@ Before running any components:
    ```bash
    cp .env.example .env
    ```
-2. Open `.env` and configure the required credentials following the inline comments. You can find all the settings options in the Pyndatic settings class available at [superlinked_app/config.py](superlinked_app/config.py).
+2. Open `.env` and configure the required credentials following the inline comments (see [superlinked_app/config.py](superlinked_app/config.py) for all options).
 
-> [!IMPORTANT]
-> **Quick Test Mode:** Set `USE_MONGO_VECTOR_DB=False` to use an in-memory database instead of MongoDB.
+> [!TIP]
+> For quick testing, set `USE_MONGO_VECTOR_DB=False` to use an in-memory database
 
 ## 3. Load and Process Your Data
 
@@ -104,8 +104,9 @@ data/
 
 3. Try some queries:
    ```bash
-   make post-filter-query     # Example: "books under $100"
-   make post-semantic-query   # Natural language search
+   make post-filter-query     
+   make post-semantic-query   
+   make similar-item-query
    ```
 
 4. Start the Streamlit UI:
@@ -114,4 +115,4 @@ data/
    ```
    Accessible at `http://localhost:8501/`
 
-> 🔔 Make sure the server is running (step 1) before executing the data loading or search commands.
+> 🔔 Make sure the data finished loading before excuting any queries.
