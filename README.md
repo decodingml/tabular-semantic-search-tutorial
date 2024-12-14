@@ -38,10 +38,8 @@ A production-ready tabular semantic search system for Amazon e-commerce products
 Perfect for developers building search functionality in e-commerce or structured data applications.
 
 <p align="center">
-  <img src="assets/architecture_1.png" alt="architecture_1" width="400" style="display: inline-block; margin-right: 20px;">
-  <img src="assets/architecture_2.png" alt="architecture_2" width="400" style="display: inline-block;">
+  <img src="assets/architecture_1.png" alt="architecture_1" width="600">
 </p>
-
 
 ## 🎓 Prerequisites
 
