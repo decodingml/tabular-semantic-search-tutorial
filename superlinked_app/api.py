@@ -31,8 +31,8 @@ if settings.USE_MONGO_VECTOR_DB:
         settings.MONGO_DATABASE_NAME,
         settings.MONGO_CLUSTER_NAME,
         settings.MONGO_PROJECT_ID,
-        settings.MONGO_API_PUBLIC_KEY,
-        settings.MONGO_API_PRIVATE_KEY,
+        settings.MONGO_API_PUBLIC_KEY.get_secret_value(),
+        settings.MONGO_API_PRIVATE_KEY.get_secret_value(),
     )
 else:
     logger.info("Using InMemoryVectorDatabase as your vector database.")

@@ -3,7 +3,7 @@ import streamlit as st
 
 
 def make_semantic_query(query: str, limit: int = 3) -> dict | None:
-    url = "http://localhost:8080/api/v1/search/similar_items_query"
+    url = "http://localhost:8080/api/v1/search/semantic_query"
     headers = {"accept": "application/json", "Content-Type": "application/json"}
     payload = {"natural_query": query, "limit": limit}
 
@@ -31,7 +31,7 @@ def main():
     # Query input
     query = st.text_input(
         "Enter your search query:",
-        placeholder="e.g., similar books to B07WP4RXHY with a rating bigger than 4.5 and a price lower than 100",
+        placeholder="e.g., similar books with a price lower than 100",
     )
 
     # Number of results slider

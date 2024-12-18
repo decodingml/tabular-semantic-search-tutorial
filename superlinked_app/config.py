@@ -21,11 +21,11 @@ class Settings(BaseSettings):
     # MongoDB
     USE_MONGO_VECTOR_DB: bool = False  # If 'False', we will use an InMemory vector database that requires no credentials.
     MONGO_CLUSTER_URL: str | None = None
-    MONGO_DATABASE_NAME: str | None = None
-    MONGO_CLUSTER_NAME: str | None = None
+    MONGO_CLUSTER_NAME: str = "free-cluster"
+    MONGO_DATABASE_NAME: str = "tabular-semantic-search"
     MONGO_PROJECT_ID: str | None = None
-    MONGO_API_PUBLIC_KEY: str | None = None
-    MONGO_API_PRIVATE_KEY: str | None = None
+    MONGO_API_PUBLIC_KEY: SecretStr | None = None
+    MONGO_API_PRIVATE_KEY: SecretStr | None = None
 
     # OpenAI
     OPENAI_MODEL_ID: str = "gpt-4o"

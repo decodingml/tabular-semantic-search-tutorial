@@ -10,6 +10,9 @@ download-and-process-sample-dataset:
 download-and-process-full-dataset:
 	uv run python -m tools.download_and_process_dataset --data-url https://esci-s.s3.amazonaws.com/esci.json.zst
 
+create-mongodb-database:
+	uv run python -m tools.create_mongodb_database
+
 start-superlinked-server:
 	uv run python -m superlinked.server
 
