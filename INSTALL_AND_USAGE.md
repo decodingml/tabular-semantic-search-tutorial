@@ -247,4 +247,4 @@ make start-ui
 Accessible at `http://localhost:8501/`
 
 > [!IMPORTANT]
-> If you are not getting any results when making queries from the CLI or Streamlit, restart the Superlinked server.
+> If you are **not getting any results** when making queries from the CLI or Streamlit, restart the Superlinked server.
