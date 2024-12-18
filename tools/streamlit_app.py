@@ -31,7 +31,7 @@ def main():
     # Query input
     query = st.text_input(
         "Enter your search query:",
-        placeholder="e.g., similar books with a price lower than 100",
+        placeholder="e.g., books on psychology with a price lower than 100 and a rating bigger than 4",
     )
 
     # Number of results slider

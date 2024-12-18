@@ -13,7 +13,7 @@ Install these tools on your machine:
 | Python | Programming language runtime | = v3.11 | [Download](https://www.python.org/downloads/) | Core runtime environment |
 | uv | Python package installer and virtual environment manager | >= v0.4.30 | [Download](https://github.com/astral-sh/uv) | Modern replacement for pip/venv/poetry |
 | GNU Make | Build or task automation tool | >= v3.81 | [Download](https://www.gnu.org/software/make/) | Used for running project commands |
-| MongoDB Atlas CLI | Interact with MongoDB Atlas from the CLI | >= v1.33.0 | [Download](https://www.mongodb.com/docs/atlas/cli/current/install-atlas-cli/) | Used for hosting the vector DB |  
+| MongoDB Atlas CLI | Interact with MongoDB Atlas from the CLI | >= v1.33.0 | [Download](https://www.mongodb.com/docs/atlas/cli/current/install-atlas-cli//?utm_campaign=paul_iusztin&utm_medium=referral) | Used for hosting the vector DB |  
 
 ## Cloud Services
 
@@ -22,7 +22,7 @@ You'll need access to:
 | Service | Purpose | Cost | Required Environment Variables | Setup Guide |
 |---------|---------|------|---------------------|-------------|
 | [OpenAI API](https://openai.com/index/openai-api/) | LLM API | Pay-per-use | `OPENAI_API_KEY`<br>`OPENAI_MODEL_ID` | [Quick Start Guide](https://platform.openai.com/docs/quickstart) |
-| [MongoDB Atlas](https://www.mongodb.com/products/platform/atlas-database) | Vector DB | Free tier | `USE_MONGO_VECTOR_DB`<br>`MONGO_CLUSTER_URL`<br>`MONGO_DATABASE_NAME`<br>`MONGO_CLUSTER_NAME`<br>`MONGO_PROJECT_ID`<br>`MONGO_API_PUBLIC_KEY`<br>`MONGO_API_PRIVATE_KEY` | 1. [Create a free MongoDB Atlas account](https://www.mongodb.com/cloud/atlas/register) <br> 2. [Create a Cluster](https://www.mongodb.com/docs/guides/atlas/cluster/) </br> 3. [Add a Database User](https://www.mongodb.com/docs/guides/atlas/db-user/) </br> 4. [Configure a Network Connection](https://www.mongodb.com/docs/guides/atlas/network-connections/) </br> 5. [Create an API Key](https://docs.superlinked.com/run-in-production/index-1/mongodb#creating-the-api-key) </br> 6. [Create an empty database](https://docs.superlinked.com/run-in-production/index-1/mongodb#creating-the-database) |
+| [MongoDB Atlas](https://www.mongodb.com/products/platform/atlas-database) | Vector DB | Free tier | `USE_MONGO_VECTOR_DB`<br>`MONGO_CLUSTER_URL`<br>`MONGO_DATABASE_NAME`<br>`MONGO_CLUSTER_NAME`<br>`MONGO_PROJECT_ID`<br>`MONGO_API_PUBLIC_KEY`<br>`MONGO_API_PRIVATE_KEY` | 1. [Create a free MongoDB Atlas account](https://www.mongodb.com/cloud/atlas/register/?utm_campaign=paul_iusztin&utm_medium=referral) <br> 2. [Create a Cluster](https://www.mongodb.com/docs/guides/atlas/cluster/?utm_campaign=paul_iusztin&utm_medium=referral) </br> 3. [Add a Database User](https://www.mongodb.com/docs/guides/atlas/db-user/?utm_campaign=paul_iusztin&utm_medium=referral) </br> 4. [Configure a Network Connection](https://www.mongodb.com/docs/guides/atlas/network-connections/?utm_campaign=paul_iusztin&utm_medium=referral) </br> 5. [Create an API Key](https://docs.superlinked.com/run-in-production/index-1/mongodb#creating-the-api-key) </br> 6. [Create an empty database](https://docs.superlinked.com/run-in-production/index-1/mongodb#creating-the-database) |
 
 > **Note:** Find all the required environment variables in the `.env.example` file.
 
@@ -69,10 +69,10 @@ Follow these steps to set up MongoDB Atlas for scalable vector search and get al
 
 1. **Create Account & Install CLI**
 
-- [Create a free MongoDB Atlas account](https://www.mongodb.com/cloud/atlas/register)
-- [Install MongoDB Atlas CLI](https://www.mongodb.com/docs/atlas/cli/current/install-atlas-cli/)
+- [Create a free MongoDB Atlas account](https://www.mongodb.com/cloud/atlas/register/?utm_campaign=paul_iusztin&utm_medium=referral)
+- [Install MongoDB Atlas CLI](https://www.mongodb.com/docs/atlas/cli/current/install-atlas-cli/?utm_campaign=paul_iusztin&utm_medium=referral)
 
-[📚 More on getting started with MongoDB Atlas](https://www.mongodb.com/docs/atlas/tutorial/create-atlas-account/)
+[📚 More on getting started with MongoDB Atlas](https://www.mongodb.com/docs/atlas/tutorial/create-atlas-account/?utm_campaign=paul_iusztin&utm_medium=referral)
 
 2. **Login to Atlas CLI**
 
@@ -171,7 +171,7 @@ make create-mongodb-database
 > [!IMPORTANT]
 > If you are getting `SSL handshake errors,` turn off your VPN or firewall or try using a different network.
 
-Now go to [MongoDB Atlas](https://cloud.mongodb.com/), navigate to **Clusters → Browse Collections** to verify that your database was created successfully.
+Now go to [MongoDB Atlas](https://rebrand.ly/mongo-atlas), navigate to **Clusters → Browse Collections** to verify that your database was created successfully.
 
 Your final `.env` file should have these MongoDB-related variables:
 ```bash
@@ -229,9 +229,9 @@ FastAPI endpoints docs available at `http://localhost:8080/docs`
 make load-data
 ```
 
-Go to [MongoDB Atlas](https://cloud.mongodb.com/), navigate to **Clusters → Browse Collections → tabular-semantic-search** to verify that your database was created successfully.
+Go to [MongoDB Atlas](https://rebrand.ly/mongo-atlas), navigate to **Clusters → Browse Collections → tabular-semantic-search** to verify that your vector database was populated successfully.
 
-**Note:** Give it a few minutes before running the queries (~10-15 minutes)
+**Note:** Give it a few minutes before running the queries (~5 minutes)
 
 3. Try some queries:
 ```bash
@@ -246,4 +246,5 @@ make start-ui
 ```
 Accessible at `http://localhost:8501/`
 
-> 🔔 Make sure the data finished loading before excuting any queries.
+> [!IMPORTANT]
+> If you are not getting any results when making queries from the CLI or Streamlit, restart the Superlinked server.
