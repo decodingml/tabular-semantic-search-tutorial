@@ -186,7 +186,7 @@ MONGO_API_PRIVATE_KEY=your_private_key
 
 9. **Final Thoughts**
 
-MongoDB Atlas can also be set up locally, but Superlinked isn't yet integrated with the local version: [more on the local Mongo vector DB](https://rebrand.ly/mongo-atlas-quick-start) ←
+MongoDB Atlas can also be set up locally using Docker, but Superlinked isn't yet integrated with the local version: [more on the local Mongo vector DB](https://rebrand.ly/mongo-atlas-quick-start) ←
 
 ## 4. Load and Process Your Data
 
