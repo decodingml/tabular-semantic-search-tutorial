@@ -129,6 +129,7 @@ atlas accessList list
 > For production, restrict network access to specific IPs.
 
 6. **Create API Keys**
+
 Create API key with required permissions:
 ```bash
 atlas organizations apiKeys create --desc "Full Access API Key for 'tabular-semantic-search' project" --role ORG_OWNER --role ORG_MEMBER --role ORG_GROUP_CREATOR --role ORG_READ_ONLY
@@ -147,6 +148,7 @@ Set:
 > Save your API private key immediately after creation - it cannot be retrieved later.
 
 7. **Setting Remaining Environment Variables**
+
 Set `MONGO_PROJECT_ID`:
 ```bash
 atlas projects list
@@ -160,7 +162,8 @@ atlas clusters connectionStrings describe free-cluster
 Now set the environment variables as (without `mongodb+srv://`) `MONGO_CLUSTER_URL={YOUR_DATABASE_USER}:{YOUR_DATABASE_PASSWORD}@free-cluster.vhxy1.mongodb.net`, where the database user and password are the ones created at point 4.
 
 8. **Create Database**
-Creates the database specified in MONGO_DATABASE_NAME:
+
+Create the database which is already specified in `MONGO_DATABASE_NAME`:
 ```bash
 make create-mongodb-database
 ```
@@ -183,7 +186,7 @@ MONGO_API_PRIVATE_KEY=your_private_key
 
 ## 4. Load and Process Your Data
 
-The first step is to download and process the dataset sample:
+Download and process the dataset sample:
 ```bash
 make download-and-process-sample-dataset
 ```
