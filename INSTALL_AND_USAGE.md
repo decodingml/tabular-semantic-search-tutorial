@@ -171,7 +171,7 @@ make create-mongodb-database
 > [!IMPORTANT]
 > If you are getting `SSL handshake errors,` turn off your VPN or firewall or try using a different network.
 
-Now go to [MongoDB Atlas](https://cloud.mongodb.com/) -> Clusters -> Browse Collections and check that your database was created successfully.
+Now go to [MongoDB Atlas](https://cloud.mongodb.com/), navigate to **Clusters → Browse Collections** to verify that your database was created successfully.
 
 Your final `.env` file should have these MongoDB-related variables:
 ```bash
@@ -228,6 +228,9 @@ FastAPI endpoints docs available at `http://localhost:8080/docs`
 ```bash
 make load-data
 ```
+
+Go to [MongoDB Atlas](https://cloud.mongodb.com/), navigate to **Clusters → Browse Collections → tabular-semantic-search** to verify that your database was created successfully.
+
 **Note:** Give it a few minutes before running the queries (~10-15 minutes)
 
 3. Try some queries:
