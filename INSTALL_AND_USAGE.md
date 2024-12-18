@@ -57,10 +57,6 @@ Before running any components:
    ```
 2. Open `.env` and configure the required credentials following the inline comments (see [superlinked_app/config.py](superlinked_app/config.py) for all options).
 
-<p align="center">
-  <img src="assets/env_file_example.jpg" alt="env_file_example" width="600">
-</p>
-
 > [!IMPORTANT]
 > For quick testing, set `USE_MONGO_VECTOR_DB=False` to use an in-memory database, otherwise follow `Step 3`.
 
@@ -69,7 +65,7 @@ Before running any components:
 Follow these steps to set up MongoDB Atlas for scalable vector search and get all required environment variables. 
 
 > [!TIP]
-> If you are more comfortable with a UI, you can also follow the steps from [📋 Prerequisites -> Cloud Services -> MongoDB Atlas](#-prerequisites--cloud-services), which do the same thing.
+> If you are more comfortable with a UI, you can also follow the steps from [📋 Prerequisites -> Cloud Services -> MongoDB Atlas](#-prerequisites), which do the same thing.
 
 1. **Create Account & Install CLI**
 
