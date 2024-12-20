@@ -26,7 +26,7 @@ You'll need access to:
 
 > **Note:** Find all the required environment variables in the `.env.example` file.
 
-# 💻 Setup in 3 Steps
+# 💻 Setup in 4 Steps
 
 ## 1. Install Dependencies
 
