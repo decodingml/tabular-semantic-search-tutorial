@@ -9,7 +9,7 @@
 
 ## 🎯 What You'll Build
 
-A production-ready tabular semantic search system for Amazon e-commerce products that enables natural language queries. 
+📚 Tutorial on a tabular semantic search system for Amazon e-commerce products that enables natural language queries.
 
 <div align="center">
   <table>
@@ -63,7 +63,7 @@ Our recommendation for each article:
 
 | No. | Article | Description | Notebooks | Python code |
 |--------|---------|-------------|-----------------|-----------------|
-| 1 | Forget text-to-SQL: Use this natural query instead (WIP) | Learn to build a tabular semantic search RESTful API server that enables natural language queries. | • [1_eda.ipynb](1_eda.ipynb)</br>• [2_tabular_semantic_search_superlinked.ipynb](2_tabular_semantic_search_superlinked.ipynb) | `superlinked_app` |
+| 1 | [Forget text-to-SQL: Use this natural query instead](https://decodingml.substack.com/p/forget-text-to-sql-use-this-natural) | Learn to build a tabular semantic search RESTful API server that enables natural language queries. | • [1_eda.ipynb](1_eda.ipynb)</br>• [2_tabular_semantic_search_superlinked.ipynb](2_tabular_semantic_search_superlinked.ipynb) | `superlinked_app` |
 | 2 | Tabular semantic search vs. text-to-SQL (WIP)| Deep dive into how tabular semantic search works and what it offers in addition to text-to-SQL strategies. | • [3_tabular_semantic_search_text_to_sql.ipynb](3_tabular_semantic_search_text_to_sql.ipynb) | `superlinked_app` |
 
 ## 🏗️ Project Structure
