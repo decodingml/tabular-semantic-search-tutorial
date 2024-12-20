@@ -217,7 +217,7 @@ data/
 | Notebook | Description |
 |----------|-------------|
 | [Dataset Exploration](1_eda.ipynb) | Dive into the Amazon ESCI dataset |
-| [Semantic Search Demo](2_tabular_semantic_search_superlinked.ipynb) | See Superlinked in action |
+| [Tabular Semantic Search Demo](2_tabular_semantic_search_superlinked.ipynb) | See Superlinked in action |
 | [Text-to-SQL Examples](3_tabular_semantic_search_text_to_sql.ipynb) | Try LlamaIndex queries |
 
 ## 🚀 Launch the Superlinked Server and MongoDB Vector Database
