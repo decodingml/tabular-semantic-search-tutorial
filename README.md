@@ -128,13 +128,13 @@ Open a [GitHub issue](https://github.com/decodingml/hands-on-retrieval/issues) f
   </tr>
   <tr>
     <td align="center">
-      <a href="" target="_blank">
-        <img src="assets/superlinked.png" width="200" alt="Superlinked">
+      <a href="https://rebrand.ly/superlinked-homepage" target="_blank">
+        <img src="assets/superlinked.png" height="55" alt="Superlinked">
       </a>
     </td>
     <td align="center">
-      <a href="" target="_blank">
-        <img src="assets/mongo.png" width="61" alt="Mongo">
+      <a href="https://rebrand.ly/mongo-atlas-vector-search" target="_blank">
+        <img src="assets/mongo.png" height="55" alt="Mongo">
       </a>
     </td>
   </tr>
