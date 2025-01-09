@@ -12,13 +12,13 @@ openai_config = sl.OpenAIClientConfig(
     api_key=settings.OPENAI_API_KEY.get_secret_value(), model=settings.OPENAI_MODEL_ID
 )
 
-category_similar_param = sl.Param(
-    "query_category",
+
+title_similar_param = sl.Param(
+    "query_title",
     description=(
-        "The text in the user's query that is used to search in the products' description."
-        " Extract info that does not apply to other spaces or params."
+        "The text in the user's query that is used to search in the products' title."
+        "Extract info that does not apply to other spaces or params."
     ),
-    options=constants.CATEGORIES,
 )
 text_similar_param = sl.Param(
     "query_description",
@@ -27,25 +27,12 @@ text_similar_param = sl.Param(
         " Extract info that does not apply to other spaces or params."
     ),
 )
-price_param = sl.Param(
-    "query_price",
-    description=(
-        "The text in the user's query that is used to search based on the products price."
-        " Extract info that does not apply to other spaces or params."
-    ),
-)
-review_rating_param = sl.Param(
-    "query_review_rating",
-    description=(
-        "The text in the user's query that is used to search based on the products review rating."
-        " Extract info that does not apply to other spaces or params."
-    ),
-)
 
 base_query = (
     sl.Query(
         index.product_index,
         weights={
+            index.title_space: sl.Param("title_weight"),
             index.description_space: sl.Param("description_weight"),
             index.review_rating_maximizer_space: sl.Param(
                 "review_rating_maximizer_weight"
@@ -103,14 +90,17 @@ semantic_query = (
         sl.Param("description_similar_clause_weight"),
     )
     .similar(
-        index.price_minimizer_space,
-        price_param,
-        sl.Param("price_similar_clause_weight"),
+        index.title_space,
+        title_similar_param,
+        sl.Param("title_similar_clause_weight"),
     )
-    .similar(
-        index.review_rating_maximizer_space,
-        review_rating_param,
-        sl.Param("review_rating_similar_clause_weight"),
+    .filter(
+        index.product.category
+        == sl.Param(
+            "filter_by_cateogry",
+            description="Used to only present items that have a specific cateogry",
+            options=constants.CATEGORIES,
+        )
     )
 )
 

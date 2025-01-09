@@ -15,7 +15,9 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=str(ENV_FILE), env_file_encoding="utf-8")
 
     # Superlinked
-    PROCESSED_DATASET_PATH: Path = Path("data") / "processed_300_sample.jsonl"
+    PROCESSED_DATASET_PATH: Path = (
+        Path("data") / "processed_300_sample.jsonl"
+    )  # or change it for a bigger dataset to: processed_850_sample.jsonl
     GPU_EMBEDDING_THRESHOLD: int = 32
 
     # MongoDB

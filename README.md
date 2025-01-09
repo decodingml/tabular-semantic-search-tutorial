@@ -9,7 +9,7 @@
 
 ## 🎯 What You'll Build
 
-📚 Tutorial on a tabular semantic search system for Amazon e-commerce products that enables natural language queries.
+📚 Tutorial on building a modern search app for Amazon e-commerce products leveraging tabular semantic search and natural language queries.
 
 <div align="center">
   <table>

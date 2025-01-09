@@ -22,6 +22,9 @@ category_space = sl.CategoricalSimilaritySpace(
     uncategorized_as_category=True,
     negative_filter=-1,
 )
+title_space = sl.TextSimilaritySpace(
+    text=product.title, model="Alibaba-NLP/gte-large-en-v1.5"
+)
 description_space = sl.TextSimilaritySpace(
     text=product.description, model="Alibaba-NLP/gte-large-en-v1.5"
 )
@@ -34,7 +37,7 @@ price_minimizer_space = sl.NumberSpace(
 
 product_index = sl.Index(
     spaces=[
-        category_space,
+        title_space,
         description_space,
         review_rating_maximizer_space,
         price_minimizer_space,

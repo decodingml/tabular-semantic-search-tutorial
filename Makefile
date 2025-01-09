@@ -27,14 +27,14 @@ post-filter-query:
 	'http://localhost:8080/api/v1/search/filter_query' \
 	-H 'accept: application/json' \
 	-H 'Content-Type: application/json' \
-	-d '{"natural_query": "books with a price lower than 100", "limit": 3}' | jq '.'
+	-d '{"natural_query": "books with a price lower than 100 and a rating bigger than 4", "limit": 3}' | jq '.'
 
 post-semantic-query:
 	curl -X 'POST' \
 	'http://localhost:8080/api/v1/search/semantic_query' \
 	-H 'accept: application/json' \
 	-H 'Content-Type: application/json' \
-	-d '{"natural_query": "books with a price lower than 100", "limit": 3}' | jq '.'
+	-d '{"natural_query": "books with a price lower than 100 and a rating bigger than 4", "limit": 3}' | jq '.'
 
 similar-item-query:
 	curl -X 'POST' \
