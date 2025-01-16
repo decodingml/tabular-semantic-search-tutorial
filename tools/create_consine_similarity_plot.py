@@ -32,9 +32,9 @@ data = pd.DataFrame({"x": x, "cos_sim": cos_sim_scores, "superlinked": smooth_cu
 # Highlighted points for annotation
 highlight_points = pd.DataFrame(
     {
-        "x": [20, 40],
-        "cos_sim": [cos_sim_scores[20], cos_sim_scores[40]],
-        "superlinked": [smooth_curve[20], smooth_curve[40]],
+        "x": [40, 46],
+        "cos_sim": [cos_sim_scores[40], cos_sim_scores[46]],
+        "superlinked": [smooth_curve[40], smooth_curve[46]],
     }
 )
 
