@@ -66,6 +66,30 @@ Our recommendation for each article:
 | 1 | [Natural Queries for E-commerce with Tabular Semantic Search](https://decodingml.substack.com/p/forget-text-to-sql-use-this-natural) | Learn to build a tabular semantic search RESTful API server for Amazon e-commerce products using natural language queries. | • [1_eda.ipynb](1_eda.ipynb)</br>• [2_tabular_semantic_search_superlinked.ipynb](2_tabular_semantic_search_superlinked.ipynb) | `superlinked_app` |
 | 2 | [Text-to-SQL vs Tabular Semantic Search: The Future of Search](https://decodingml.substack.com/p/stop-using-text-to-sql-for-search) | Deep dive into how tabular semantic search with multi-attribute vector indexes works and what it offers in addition to text-to-SQL strategies. | • [3_tabular_semantic_search_text_to_sql.ipynb](3_tabular_semantic_search_text_to_sql.ipynb) | `superlinked_app` |
 
+----
+
+<table style="border-collapse: collapse; border: none;">
+  <tr style="border: none;">
+    <td width="20%" style="border: none;">
+      <a href="https://decodingml.substack.com/" aria-label="Decoding ML">
+        <img src="https://github.com/user-attachments/assets/f2f2f9c0-54b7-4ae3-bf8d-23a359c86982" alt="Decoding ML Logo" width="150"/>
+      </a>
+    </td>
+    <td width="80%" style="border: none;">
+      <div>
+        <h2>📬 Stay Updated</h2>
+        <p><b><a href="https://decodingml.substack.com/">Join Decoding ML</a></b> for proven content on production-grade AI, GenAI, and information retrieval systems. Every week, straight to your inbox.</p>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<p align="center">
+  <a href="https://decodingml.substack.com/">
+    <img src="https://img.shields.io/static/v1?label&logo=substack&message=Subscribe Now&style=for-the-badge&color=black&scale=2" alt="Subscribe Now" height="40">
+  </a>
+</p>
+
 ## 🏗️ Project Structure
 
 ```text
@@ -143,3 +167,27 @@ Open a [GitHub issue](https://github.com/decodingml/hands-on-retrieval/issues) f
 ## License
 
 This course is an open-source project released under the MIT license. Thus, as long you distribute our LICENSE and acknowledge your project is based on our work, you can safely clone or fork this project and use it as a source of inspiration for your educational projects (e.g., university, college degree, personal projects, etc.).
+
+----
+
+<table style="border-collapse: collapse; border: none;">
+  <tr style="border: none;">
+    <td width="20%" style="border: none;">
+      <a href="https://decodingml.substack.com/" aria-label="Decoding ML">
+        <img src="https://github.com/user-attachments/assets/f2f2f9c0-54b7-4ae3-bf8d-23a359c86982" alt="Decoding ML Logo" width="150"/>
+      </a>
+    </td>
+    <td width="80%" style="border: none;">
+      <div>
+        <h2>📬 Stay Updated</h2>
+        <p><b><a href="https://decodingml.substack.com/">Join Decoding ML</a></b> for proven content on production-grade AI, GenAI, and information retrieval systems. Every week, straight to your inbox.</p>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<p align="center">
+  <a href="https://decodingml.substack.com/">
+    <img src="https://img.shields.io/static/v1?label&logo=substack&message=Subscribe Now&style=for-the-badge&color=black&scale=2" alt="Subscribe Now" height="40">
+  </a>
+</p>
